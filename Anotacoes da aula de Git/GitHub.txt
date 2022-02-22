@@ -1,0 +1,86 @@
+
+----------------------------------- Git - Software de versionamento de código distribuído
+
+	- Controle de Versão
+	- Armazenamento em nuvem
+	- Trabalho em equipe
+	- Melhorar seu código
+	- Reconhecimento
+
+
+
+------------- Funcionamento do Git
+
+	. Utiliza SHA1 - Secure Hash Algorithm (criptografia) - Saída de caracteres de 40 dígitos para identificação
+		. "openssl sha1"
+
+	- Objetos fundamentais
+	. Blobs -> bloco básico de composição - tamanho 42
+		. não armazena o nome do arquivo, apenas seu SHA1
+	. Trees -> Monta a estrutura de onde estão localizados os arquivos ou outras árvores, encapsula  o comportamento de diretórios
+		. armazena nome do arquivo
+		. armazena Blobs
+		. Armazena Commits
+	. Commit -> Aponta para o commit anterior
+		. Cria uma linha do tempo entre os commits que foram criados, garantindo a segurança
+		. possui parente
+		. possui o nome do autor
+		. pode possuir uma mensagem
+		. possui timestamp (carimbo de horário de quando foi criado)
+	
+------------- Comandos
+	. Listar -> dir
+	. Change Directory -> cd
+		."/" nome da pasta avança até ela
+		. Utilizar a "/" volta à raiz do diretório, ex:" cd /" -> C:
+		. ".. cd" para voltar à navegação
+
+	. Limpar a tela -> cls
+	. Criar uma pasta -> mkdir (Make Directory) (ambos SOs)
+	. Criar um arquivo -> echo
+		.echo printa algo no terminal, se não houver instruções
+		. ">" redirecionador de fluxo, utilizado para implementar algo em um arquivo. Pega a saída do echo e redireciona.
+		. "echo hello > hello.txt
+	. Deletar arquivos de um repositório -> del
+	. Deletar um repositório -> rmdir
+	. Mostrar arquivos ocultos -> -a
+	. Mover -> mv
+
+	. git add -> seleciona o arquivo e move para a área de staging
+	. git push origin master -> envia o repositório local para o github
+	. git pull origin master -> altera da branch atual (origin master) para juntar com a branch local 
+
+------------- Comandos Linux
+	. Listar -> ls
+	. Change Directory -> cd
+		. ".. cd" para voltar à navegação
+
+	. Limpar a tela -> clear
+	. Deletar um repositório -> rm -rf ( R - Recursivo, F - Force (ignorar confirmações))
+
+------------ Aleatórios
+	. Markdown -> Forma mais humanizada de HTML (# == <h1>) (.md)
+	. GIT INIT -> cria pasta repositório oculto .git
+
+
+------------ Repositórios
+
+	Os repositórios terão arquivos "Tracked" e "Untracked"
+
+	. Tracked:
+		. Unmodified -> Ainda não modificado
+			. Passa a ser modified através da comparação do SHA1
+			. Quando é removido o arquivo unmodified, ele vira Untracked 
+		. Modified -> Modificado
+			
+		. Staged -> Arquivos em preparação para outro agrupamento, fazer parte de um commit
+
+		. COMMIT TRANSFORMA OS ARQUIVOS PARA UNMODIFIED NOVAMENTE
+
+		
+		 Passa a ser staged quando é usado o "git add"
+	         ELES SÃO UM CICLO, CHAMADOS DE "STAGING AREA"
+
+	. Untracked: Arquivos que não temos ciência
+
+	. Git Status -> mostra o status do arquivo: untracked, unmodified, modified ou staged
